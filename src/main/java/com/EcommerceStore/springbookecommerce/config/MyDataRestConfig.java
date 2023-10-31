@@ -1,9 +1,10 @@
 package com.EcommerceStore.springbookecommerce.config;
 
 import com.EcommerceStore.springbookecommerce.dao.ProductRepository;
+import com.EcommerceStore.springbookecommerce.entity.Country;
 import com.EcommerceStore.springbookecommerce.entity.Product;
 import com.EcommerceStore.springbookecommerce.entity.ProductCategory;
-import jakarta.persistence.Entity;
+import com.EcommerceStore.springbookecommerce.entity.State;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.metamodel.EntityType;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,6 +42,8 @@ public class MyDataRestConfig implements RepositoryRestConfigurer {
 
         disableHttpMethods(Product.class, config, theUnsupportedActions);
         disableHttpMethods(ProductCategory.class, config, theUnsupportedActions);
+        disableHttpMethods(State.class, config, theUnsupportedActions);
+        disableHttpMethods(Country.class, config, theUnsupportedActions);
 
         cors.addMapping(config.getBasePath() + "/**").allowedOrigins(theAllowedOrigins);
 
