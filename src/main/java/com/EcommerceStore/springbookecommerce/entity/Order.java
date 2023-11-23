@@ -1,7 +1,8 @@
 package com.EcommerceStore.springbookecommerce.entity;
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -12,7 +13,9 @@ import java.util.Set;
 
 @Entity
 @Table(name = "orders")
-@Data
+/** Unknown bug using Lombok @Data so using @Getter and @Setter as a fix **/
+@Getter
+@Setter
 public class Order {
 
     @Id

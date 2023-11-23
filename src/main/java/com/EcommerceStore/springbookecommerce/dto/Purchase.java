@@ -19,5 +19,5 @@ public class Purchase {
 
     private Order order;
 
-    private Set<OrderItem> orderItem;
+    private Set<OrderItem> orderItems;
 }
